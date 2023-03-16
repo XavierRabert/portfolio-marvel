@@ -1,0 +1,10 @@
+<div class="content">
+  <div *ngFor="let char of characters" class="character">
+    <a routerLink="{{char.id|json}}">
+      <div class="img__wrapper">
+        <img src="{{char.thumbnail.path}}/standard_fantastic.{{char.thumbnail.extension}}" alt="{{char.name}}">
+      </div>
+      <h2 class="charName">{{char.name }}</h2>
+    </a>
+  </div>
+</div>
