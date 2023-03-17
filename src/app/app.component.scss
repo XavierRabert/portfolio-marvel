@@ -1,0 +1,34 @@
+.wallpaper {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  background-image: url("../assets/images/Wallpaper.jpg");
+  background-size: cover;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  _position: absolute;
+  align-items: center;
+  .enter_page {
+    position: relative;
+    margin: 0 auto;
+    _bottom: 50vh;
+    background-color: red;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #3333;
+    transition: 500ms all;
+    cursor: pointer;
+  }
+  .enter_page:hover {
+    background-color: red;
+    color: white;
+  }
+}

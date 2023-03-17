@@ -1,0 +1,41 @@
+nav {
+  _margin: 1rem;
+  height: 50px;
+  background-color: aqua;
+  display: inline-flex;
+  _justify-content: center;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    .menuItem {
+      text-decoration: none;
+      background-color: black;
+      color: red;
+      _padding: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.wrapper {
+  height: calc(100vh - 50px);
+  min-width: 100vw;
+  overflow: hidden;
+  background-image: url("../../assets/images/Background.jpg");
+  background-size: cover;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  _position: absolute;
+  align-items: center;
+
+  .insideWrapper {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff2;
+  }
+}

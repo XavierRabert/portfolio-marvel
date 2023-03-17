@@ -1,5 +1,14 @@
-<a routerLink="characters">Show Characters</a>
-
-<router-outlet>
-
+<router-outlet *ngIf="enterPressed else helloPage">
 </router-outlet>
+<ng-template #helloPage>
+  <div class="wallpaper">
+    <!-- <img src="../assets/images/Wallpaper.jpg" alt="Marvel"> -->
+    <!-- <a href="home/home.component.html" class="enter_page"> -->
+
+    <div class="enter_page" (click)="onClickNavigate()">
+      Enter
+    </div>
+    <!-- </a> -->
+    <div class="enter_page">{{enterPressed}}</div>
+  </div>
+</ng-template>

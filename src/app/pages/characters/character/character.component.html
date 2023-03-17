@@ -1,5 +1,51 @@
 <div class="container">
-  <div class="char_wrapper">
-    <p>{{charID}}</p>
+  <div class="char_wrapper" *ngIf="dataCharacter">
+    <div class="imageChar">
+      <img src="{{dataCharacter.thumbnail.path}}/detail.{{dataCharacter.thumbnail.extension}}" alt="">
+      <div class="target">
+        <span class="name">
+          <h2>{{dataCharacter.name}}</h2>
+        </span>
+        <p class="desc">{{dataCharacter.description}}</p>
+      </div>
+
+    </div>
+
+    <div class="lists">
+      <div class="itemCharList" *ngIf="dataCharacter.comics">
+        <h3>Comics List:</h3>
+        <span>Available: {{dataCharacter.comics.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let comic of dataCharacter.comics.items">
+            <a href="{{comic.resourceURI}}">{{comic.name}}</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="itemCharList" *ngIf="dataCharacter.stories">
+        <h3>Stories List:</h3>
+        <span>Available: {{dataCharacter.stories.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let story of dataCharacter.stories.items">
+            <a href="{{story.resourceURI}}">{{story.name}}</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="itemCharList" *ngIf="dataCharacter.series">
+        <h3>Series List:</h3>
+        <span>Available: {{dataCharacter.series.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let serie of dataCharacter.series.items">
+            <a href="{{serie.resourceURI}}">{{serie.name}}</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution" *ngIf="data">
+      <a href="http://marvel.com" target="_blank">{{data.attributionText}}</a>
+    </div>
+
   </div>
 </div>

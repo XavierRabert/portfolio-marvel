@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { CharactersService } from 'src/app/shared/services/characters.service';
 
 @Component({
@@ -9,19 +9,23 @@ import { CharactersService } from 'src/app/shared/services/characters.service';
 })
 export class CharacterComponent implements OnInit {
   charID!: any;
+  data!: any;
+  dataCharacter!: any;
   constructor(
     private route: ActivatedRoute,
     private charactersSvs: CharactersService
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.charID = this.route.snapshot.paramMap.get('id');
-    this.getDetails(this.charID);
+    this.getDetails();
   }
 
-  async getDetails(id: string) {
-    const response = await this.charactersSvs.getCharDetails(id);
+  async getDetails() {
+    const response = await this.charactersSvs.getCharDetails(this.charID);
     const data = await response.json();
-    console.log(data);
+    this.data = data;
+    this.dataCharacter = data.data.results[0];
+    console.log(this.data);
   }
 }
