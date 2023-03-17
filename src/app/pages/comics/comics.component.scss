@@ -4,47 +4,50 @@
   align-items: center;
   justify-content: center;
 
-  .character {
+  .comic {
     display: flex;
     flex-direction: column;
-    _justify-content: space-around;
+    justify-content: flex-start;
     width: 250px;
-    height: 350px;
-    background-color: white;
+    height: 500px;
+    background-color: #fff;
     margin: 1rem;
-    border-radius: 1rem;
+    _border-radius: 1rem;
     overflow: hidden;
     float: left;
     transition: 300ms all;
     a {
       text-decoration: none;
-
       h2 {
         text-align: center;
         margin: 1rem;
         color: black;
         transition: 300ms all;
+        font-size: 1.3rem;
       }
       .img__wrapper {
-        height: 220px;
+        height: 350px;
         display: flex;
         overflow: hidden;
         img {
           object-position: top center;
           width: 100%;
+          padding: 1rem;
+          border-bottom: 3px solid black;
           transition: 300ms all;
         }
       }
     }
   }
 
-  .character:hover {
-    background-color: rgb(197, 62, 62);
-    h2 {
-      padding-top: 1rem;
-    }
-    img {
-      transform: scale(1.1);
-    }
-  }
+  //   .comic:hover {
+  //     background-color: rgb(90, 21, 21);
+
+  //     h2 {
+  //       padding-bottom: 1rem;
+  //     }
+  //     img {
+  //       transform: scale(1.1);
+  //     }
+  //   }
 }

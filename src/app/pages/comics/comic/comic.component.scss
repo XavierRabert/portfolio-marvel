@@ -1,0 +1,129 @@
+.char_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  .imageChar {
+    display: inline-flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #0004;
+    padding: 1rem;
+
+    .name {
+      position: relative;
+      display: inline-block;
+      &:after,
+      &:before {
+        content: "";
+        display: block;
+        margin-left: 16px;
+        border-style: solid;
+        border-color: orange;
+        border-width: 0 0 16px 16px;
+      }
+      &:after {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+
+      h2 {
+        color: white;
+        font-size: 3rem;
+        background-color: orange;
+        padding: 0 3rem;
+        display: block;
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          _height: 15px;
+          _width: 15px;
+          top: 0;
+          left: 0;
+          border-style: solid;
+          border-color: orange transparent;
+          border-width: 0 0 16px 16px;
+          transition: none;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          _height: 15px;
+          _width: 15px;
+          bottom: 0;
+          right: 0;
+          border-style: solid;
+          border-color: orange transparent;
+          border-width: 16px 16px 0 0;
+          transition: none;
+        }
+      }
+    }
+
+    .desc {
+      margin-bottom: 1rem;
+      color: white;
+      background-color: #0004;
+      padding: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .lists {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: #0004;
+    .itemCharList {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: right;
+      width: 80%;
+      padding: 1rem;
+      margin-top: 1rem;
+      span {
+        font-size: 1.2rem;
+        color: white;
+      }
+      .itemsList {
+        display: flex;
+        flex-direction: column;
+        text-align: initial;
+        margin-top: 1rem;
+        a {
+          text-decoration: underline;
+          line-height: 1.5rem;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .attribution {
+    display: block;
+    background-color: #0004;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: white;
+  }
+}

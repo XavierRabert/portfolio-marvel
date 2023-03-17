@@ -1,13 +1,16 @@
 nav {
-  _margin: 1rem;
   height: 50px;
-  background-color: aqua;
+  background-color: black;
   display: inline-flex;
-  _justify-content: center;
   align-items: center;
+  width: 100%;
 
   ul {
     list-style: none;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
     .menuItem {
       text-decoration: none;
       background-color: black;
