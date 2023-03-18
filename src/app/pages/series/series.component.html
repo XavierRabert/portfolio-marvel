@@ -1,0 +1,10 @@
+<div class="content">
+  <div *ngFor="let serie of series" class="serie">
+    <a routerLink="{{serie.id|json}}">
+      <div class="img__wrapper">
+        <img src="{{serie.thumbnail.path}}/portrait_incredible.{{serie.thumbnail.extension}}" alt="{{serie.name}}">
+      </div>
+      <h2 class="serieName">{{serie.title }}</h2>
+    </a>
+  </div>
+</div>

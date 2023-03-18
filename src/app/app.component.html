@@ -1,5 +1,5 @@
-<router-outlet *ngIf="enterPressed else helloPage">
-</router-outlet>
+<app-home *ngIf="enterPressed else helloPage">
+</app-home>
 <ng-template #helloPage>
   <div class="wallpaper">
     <!-- <img src="../assets/images/Wallpaper.jpg" alt="Marvel"> -->
@@ -9,6 +9,5 @@
       Enter
     </div>
     <!-- </a> -->
-    <div class="enter_page">{{enterPressed}}</div>
   </div>
 </ng-template>

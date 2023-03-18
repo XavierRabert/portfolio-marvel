@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="char_wrapper" *ngIf="dataStory">
+    <div class="imageChar">
+      <img src="{{dataStory.thumbnail.path}}/detail.{{dataStory.thumbnail.extension}}" alt="{{dataStory.title}}">
+      <div class="target">
+        <span class="name">
+          <h2>{{dataStory.title}}</h2>
+        </span>
+        <p [innerHtml]="dataStory.description" class="desc"></p>
+      </div>
+
+    </div>
+
+    <div class="lists">
+      <div class="itemCharList" *ngIf="dataStory.characters.length>0">
+        <h3>Characters List:</h3>
+        <span>Available: {{dataStory.characters.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let character of dataStory.characters.items">
+            <a
+              routerLink="../../characters/{{character.resourceURI.substring(character.resourceURI.lastIndexOf('/') + 1)}}">{{character.name}}</a>
+
+          </span>
+        </div>
+      </div>
+
+      <div class="itemCharList" *ngIf="dataStory.comics.items.length>0">
+        <h3>Comics List:</h3>
+        <span>Available: {{dataStory.comics.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let comic of dataStory.comics.items">
+            <a
+              routerLink="../../comics/{{comic.resourceURI.substring(comic.resourceURI.lastIndexOf('/') + 1)}}">{{comic.name}}</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="itemCharList" *ngIf="dataStory.stories.length>0">
+        <h3>Stories List:</h3>
+        <span>Available: {{dataStory.stories.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let story of dataStory.stories.items">
+            <a
+              routerLink="../../stories/{{story.resourceURI.substring(story.resourceURI.lastIndexOf('/') + 1)}}">{{story.name}}</a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="lists">
+        <div class="itemCharList" *ngIf="dataStory.images.length>0">
+          <h3>Images:</h3>
+          <div class="itemsListImages">
+            <div *ngFor="let img of dataStory.images">
+              <img src="{{img.path}}/standard_xlarge.{{img.extension}}" alt="{{dataStory.title}}">
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    <div class="attribution" *ngIf="data">
+      <a href="http://marvel.com" target="_blank">{{data.attributionText}}</a>
+    </div>
+
+  </div>
+</div>

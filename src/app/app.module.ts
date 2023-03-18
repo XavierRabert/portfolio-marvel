@@ -5,16 +5,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HomeModule } from './home/home.module';
+import { SeriesComponent } from './pages/series/series.component';
+import { SerieComponent } from './pages/series/serie/serie.component';
+import { StoriesComponent } from './pages/stories/stories.component';
+import { StoryComponent } from './pages/stories/story/story.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { CharactersComponent } from './pages/characters/characters.component';
+import { CharacterComponent } from './pages/characters/character/character.component';
+import { ComicsComponent } from './pages/comics/comics.component';
+import { ComicComponent } from './pages/comics/comic/comic.component';
+import { InitialComponent } from './home/initial/initial.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SeriesComponent,
+    SerieComponent,
+    StoriesComponent,
+    StoryComponent,
+    NoPageFoundComponent,
+    CharactersComponent,
+    CharacterComponent,
+    ComicsComponent,
+    ComicComponent,
+    InitialComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
-    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

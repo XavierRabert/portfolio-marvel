@@ -11,31 +11,51 @@
 
     </div>
 
+
+
     <div class="lists">
-      <div class="itemCharList" *ngIf="dataComic.creators">
+      <div class="itemCharList" *ngIf="dataComic.characters.items.length>0">
+        <h3>Characters List:</h3>
+        <span>Available: {{dataComic.characters.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let character of dataComic.characters.items">
+            <a
+              routerLink="../../characters/{{character.resourceURI.substring(character.resourceURI.lastIndexOf('/') + 1)}}">{{character.name}}</a>
+
+          </span>
+        </div>
+      </div>
+
+      <div class="itemCharList" *ngIf="dataComic.creators.items.length>0">
         <h3>Creators List:</h3>
         <span>Available: {{dataComic.creators.available}}</span>
         <div class="itemsList">
           <span *ngFor="let creator of dataComic.creators.items">
-            <a href="{{creator.resourceURI}}">{{creator.role}} - {{creator.name}}</a>
+            <a routerLink="../../creators/{{creator.resourceURI.substring(creator.resourceURI.lastIndexOf('/') + 1)}}">{{creator.role}}
+              - {{creator.name}}</a>
+
           </span>
         </div>
       </div>
 
-      <div class="itemCharList" *ngIf="dataComic.stories">
+      <!-- <div class="itemCharList" *ngIf="dataComic.stories.items.length>0">
         <h3>Stories List:</h3>
         <span>Available: {{dataComic.stories.available}}</span>
         <div class="itemsList">
           <span *ngFor="let story of dataComic.stories.items">
-            <a href="{{story.resourceURI}}">{{story.name}}</a>
+            <a
+              routerLink="../../stories/{{story.resourceURI.substring(story.resourceURI.lastIndexOf('/') + 1)}}">{{story.name}}</a>
           </span>
         </div>
-      </div>
+      </div> -->
 
       <div class="itemCharList" *ngIf="dataComic.series">
         <h3>Series List:</h3>
         <span class="itemsList">
-          <a href="{{dataComic.series.name}}">{{dataComic.series.name}}</a>
+
+          <a
+            routerLink="../../series/{{dataComic.series.resourceURI.substring(dataComic.series.resourceURI.lastIndexOf('/') + 1)}}">{{dataComic.series.name}}</a>
+
         </span>
       </div>
     </div>
@@ -43,7 +63,7 @@
     <div class="lists">
       <div class="itemCharList" *ngIf="dataComic.images.length>0">
         <h3>Images:</h3>
-        <div class="itemsList">
+        <div class="itemsListImages">
           <div *ngFor="let img of dataComic.images">
             <img src="{{img.path}}/standard_xlarge.{{img.extension}}" alt="{{dataComic.title}}">
           </div>

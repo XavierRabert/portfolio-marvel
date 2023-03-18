@@ -1,0 +1,10 @@
+<div class="content">
+  <div *ngFor="let story of stories" class="serie">
+    <a routerLink="{{story.id|json}}">
+      <div class="img__wrapper" *ngIf="story.thumbnail != null">
+        <img src="{{story.thumbnail.path}}/portrait_incredible.{{story.thumbnail.extension}}" alt="{{story.name}}">
+      </div>
+      <h2 class="serieName">{{story.title }}</h2>
+    </a>
+  </div>
+</div>

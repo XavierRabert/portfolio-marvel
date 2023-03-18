@@ -12,32 +12,35 @@
     </div>
 
     <div class="lists">
-      <div class="itemCharList" *ngIf="dataCharacter.comics">
+      <div class="itemCharList" *ngIf="dataCharacter.comics.items.length>0">
         <h3>Comics List:</h3>
         <span>Available: {{dataCharacter.comics.available}}</span>
         <div class="itemsList">
           <span *ngFor="let comic of dataCharacter.comics.items">
-            <a href="{{comic.resourceURI}}">{{comic.name}}</a>
+            <a
+              routerLink="../../comics/{{comic.resourceURI.substring(comic.resourceURI.lastIndexOf('/') + 1)}}">{{comic.name}}</a>
           </span>
         </div>
       </div>
 
-      <div class="itemCharList" *ngIf="dataCharacter.stories">
+      <!-- <div class="itemCharList" *ngIf="dataCharacter.stories.items.length>0">
         <h3>Stories List:</h3>
         <span>Available: {{dataCharacter.stories.available}}</span>
         <div class="itemsList">
           <span *ngFor="let story of dataCharacter.stories.items">
-            <a href="{{story.resourceURI}}">{{story.name}}</a>
+            <a
+              routerLink="../../stories/{{story.resourceURI.substring(story.resourceURI.lastIndexOf('/') + 1)}}">{{story.name}}</a>
           </span>
         </div>
-      </div>
+      </div> -->
 
-      <div class="itemCharList" *ngIf="dataCharacter.series">
+      <div class="itemCharList" *ngIf="dataCharacter.series.items.length>0">
         <h3>Series List:</h3>
         <span>Available: {{dataCharacter.series.available}}</span>
         <div class="itemsList">
           <span *ngFor="let serie of dataCharacter.series.items">
-            <a href="{{serie.resourceURI}}">{{serie.name}}</a>
+            <a
+              routerLink="../../series/{{serie.resourceURI.substring(serie.resourceURI.lastIndexOf('/') + 1)}}">{{serie.name}}</a>
           </span>
         </div>
       </div>
