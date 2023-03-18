@@ -10,7 +10,7 @@ import { StoriesService } from 'src/app/shared/services/stories.service';
 export class StoryComponent implements OnInit {
   storyID!: any;
   data!: any;
-  dataSerie!: any;
+  dataStory!: any;
   constructor(
     private route: ActivatedRoute,
     private storySvs: StoriesService
@@ -25,7 +25,7 @@ export class StoryComponent implements OnInit {
     const response = await this.storySvs.getStoryDetails(this.storyID);
     const data = await response.json();
     this.data = data;
-    this.dataSerie = data.data.results[0];
+    this.dataStory = data.data.results[0];
     console.log(this.data);
   }
 }
