@@ -1,1 +1,29 @@
-<p>initial works!</p>
+<div class="content">
+
+  <div class="contentHeader">
+    <input type="text" [(ngModel)]="wordSearch" #name="ngModel" placeholder="Search" class="inputClass">
+    <button (click)="searchResults()" class="inputClass">Search</button>
+  </div>
+
+  <div class="contentBody" *ngIf="characters != null">
+    <div *ngFor="let char of characters" class="character">
+      <a routerLink="characters/{{char.id|json}}">
+        <div class="img__wrapper">
+          <img src="{{char.thumbnail.path}}/standard_fantastic.{{char.thumbnail.extension}}" alt="{{char.name}}">
+        </div>
+        <h2 class="charName">{{char.name }}</h2>
+      </a>
+    </div>
+  </div>
+
+  <div class="contentBody" *ngIf="comics != null">
+    <div *ngFor="let comic of comics" class="comic">
+      <a routerLink="comics/{{comic.id|json}}">
+        <div class="img__wrapper">
+          <img src="{{comic.thumbnail.path}}/portrait_incredible.{{comic.thumbnail.extension}}" alt="{{comic.name}}">
+        </div>
+        <h2 class="comicName">{{comic.title }}</h2>
+      </a>
+    </div>
+  </div>
+</div>

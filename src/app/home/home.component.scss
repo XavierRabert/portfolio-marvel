@@ -1,5 +1,5 @@
 nav {
-  height: 50px;
+  height: 80px;
   background-color: black;
   display: inline-flex;
   align-items: center;
@@ -11,12 +11,20 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
+
     .menuItem {
       text-decoration: none;
       background-color: black;
       color: red;
-      _padding: 1rem;
+      padding: 1rem;
       font-size: 1.5rem;
+      transition: 300ms all;
+    }
+    .active-link {
+      _font-size: 1.7em;
+      _padding: 0.3rem;
+      background-color: red;
+      color: white;
     }
   }
 }

@@ -15,6 +15,7 @@ import { CharacterComponent } from './pages/characters/character/character.compo
 import { ComicsComponent } from './pages/comics/comics.component';
 import { ComicComponent } from './pages/comics/comic/comic.component';
 import { InitialComponent } from './home/initial/initial.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { InitialComponent } from './home/initial/initial.component';
     AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

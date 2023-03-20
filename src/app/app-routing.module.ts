@@ -19,7 +19,7 @@ const routes: Routes = [
   //   component: AppComponent,
   //   loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   // },
-  { path: '', component: InitialComponent },
+  { path: '', component: InitialComponent, pathMatch: 'full' },
   { path: 'characters', component: CharactersComponent },
   { path: 'characters/:id', component: CharacterComponent },
   { path: 'comics', component: ComicsComponent },
