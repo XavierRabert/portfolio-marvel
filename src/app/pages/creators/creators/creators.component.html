@@ -1,0 +1,11 @@
+<div class="content">
+  <div *ngFor="let creator of creators" class="creator">
+    <a routerLink="{{creator.id|json}}">
+      <div class="img__wrapper">
+        <img src="{{creator.thumbnail.path}}/portrait_incredible.{{creator.thumbnail.extension}}"
+          alt="{{creator.firstName}}">
+      </div>
+      <h2 class="creatorName">{{creator.firstName }}</h2>
+    </a>
+  </div>
+</div>

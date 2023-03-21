@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="char_wrapper" *ngIf="dataCreator">
+    <div class="imageChar">
+      <img src="{{dataCreator.thumbnail.path}}/detail.{{dataCreator.thumbnail.extension}}"
+        alt="{{dataCreator.fullName}}">
+      <div class="target">
+        <span class="name">
+          <h2>{{dataCreator.fullName}}</h2>
+        </span>
+      </div>
+    </div>
+
+
+
+    <div class="lists">
+      <div class="itemCharList" *ngIf="dataCreator.comics.items.length>0">
+        <h3>Comics List:</h3>
+        <span>Available: {{dataCreator.comics.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let comic of dataCreator.comics.items">
+            <a
+              routerLink="../../comics/{{comic.resourceURI.substring(comic.resourceURI.lastIndexOf('/') + 1)}}">{{comic.name}}</a>
+
+          </span>
+        </div>
+      </div>
+
+      <div class="itemCharList" *ngIf="dataCreator.series.items.length>0">
+        <h3>Series List:</h3>
+        <span>Available: {{dataCreator.series.available}}</span>
+        <div class="itemsList">
+          <span *ngFor="let serie of dataCreator.series.items">
+            <a
+              routerLink="../../series/{{serie.resourceURI.substring(serie.resourceURI.lastIndexOf('/') + 1)}}">{{serie.name}}</a>
+
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="attribution" *ngIf="data">
+      <a href="http://marvel.com" target="_blank">{{data.attributionText}}</a>
+    </div>
+
+  </div>
+</div>

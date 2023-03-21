@@ -16,6 +16,8 @@ import { ComicsComponent } from './pages/comics/comics.component';
 import { ComicComponent } from './pages/comics/comic/comic.component';
 import { InitialComponent } from './home/initial/initial.component';
 import { FormsModule } from '@angular/forms';
+import { CreatorsComponent } from './pages/creators/creators/creators.component';
+import { CreatorComponent } from './pages/creators/creator/creator.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { FormsModule } from '@angular/forms';
     ComicsComponent,
     ComicComponent,
     InitialComponent,
+    CreatorsComponent,
+    CreatorComponent,
   ],
   imports: [
     BrowserModule,

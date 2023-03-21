@@ -1,16 +1,20 @@
 <nav>
   <ul>
     <li>
-      <a routerLink="/" class="menuItem" routerLinkActive="active-link">HOME</a>
+      <a routerLink="/" class="menuItem" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact:true}">HOME</a>
     </li>
     <li>
-      <a routerLink="characters" class="menuItem" routerLinkActive="active-link">Show Characters</a>
+      <a routerLink="/characters" class="menuItem" routerLinkActive="active-link">Characters</a>
     </li>
     <li>
-      <a routerLink="/comics" class="menuItem" routerLinkActive="active-link">Show Comics</a>
+      <a routerLink="/comics" class="menuItem" routerLinkActive="active-link">Comics</a>
     </li>
     <li>
-      <a routerLink="/series" class="menuItem" routerLinkActive="active-link">Show Series</a>
+      <a routerLink="/series" class="menuItem" routerLinkActive="active-link">Series</a>
+    </li>
+    <li>
+      <a routerLink="/creators" class="menuItem" routerLinkActive="active-link">Creators</a>
     </li>
     <!-- <li>
       <a routerLink="/stories" class="menuItem">Show Stories</a>
